@@ -4,8 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
-import { TempoDevtools } from "tempo-devtools";
-TempoDevtools.init();
+// Tempo-specific code removed for local development
 
 const basename = import.meta.env.BASE_URL;
 
