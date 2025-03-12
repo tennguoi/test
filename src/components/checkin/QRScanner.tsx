@@ -34,7 +34,8 @@ const QRScanner = ({
     const success = Math.random() > 0.3;
 
     if (success) {
-      const mockData = `DELEGATE-${Math.floor(Math.random() * 1000)}`;
+      // Use a fixed QR code that matches a delegate in the system
+      const mockData = "DEL-1001"; // This should match a badgeId in the CheckinSystem
       setLastScanned(mockData);
       setScanStatus("success");
       onScanSuccess(mockData);

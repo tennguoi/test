@@ -51,9 +51,13 @@ const CheckinSystem = ({
   const handleScanSuccess = (data: string) => {
     console.log("QR code scanned:", data);
     // In a real app, you would validate the QR code data and find the matching delegate
-    // For this example, we'll just use the first delegate in the list
-    const delegate = delegates.find((d) => d.badgeId === data) || delegates[0];
-    handleCheckin(delegate);
+    // For this example, we'll check if the delegate exists before checking in
+    const delegate = delegates.find((d) => d.badgeId === data);
+    if (delegate) {
+      handleCheckin(delegate);
+    } else {
+      console.error("Delegate not found with QR code:", data);
+    }
   };
 
   // Handle manual check-in

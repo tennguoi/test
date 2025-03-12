@@ -33,6 +33,15 @@ const Home = () => {
       .join(" ");
 
     setUserName(formattedName);
+
+    // Redirect based on role
+    if (values.role === "administrator") {
+      navigate("/admin/dashboard");
+    } else if (values.role === "staff") {
+      navigate("/staff/dashboard");
+    } else {
+      navigate("/delegate/dashboard");
+    }
   };
 
   const handleLogout = () => {
